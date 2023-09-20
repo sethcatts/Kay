@@ -1,0 +1,22 @@
+{
+  "name": "kay",
+  "version": "1.0.0",
+  "description": "Home assistant ",
+  "main": "bin/index.js",
+  "bin": {
+    "mycli": "./bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sethcatts/Kay.git"
+  },
+  "author": "Seth Catts",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sethcatts/Kay/issues"
+  },
+  "homepage": "https://github.com/sethcatts/Kay#readme"
+}

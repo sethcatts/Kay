@@ -1,2 +1,11 @@
 # Kay
-Kay home assist
+*A custom home assistant*
+
+## Features
+### Web GUI & CLI
+### Lighting 
+### Blinds
+### Camera
+### Smart Mirror
+### Music
+
