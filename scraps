@@ -1,0 +1,35 @@
+<div class="row">
+            <div class="column"></div>
+            <div class="column"></div>
+            <div class="column"></div>
+          </div> 
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <iframe src="https://todoist.com/app/today" title="todoist" id="iframe-todoist">
+            </iframe>
+          </div>
+        <h1 id="kayLogo">Welcome to Project Kay</h1> 
+        <div id="switches-div">
+            <div class="switches">
+                <span class="switch-label">Light 1</span>
+                <label class="switch" for="light1">
+                    <input type="checkbox" name="light1" id="light1">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <br>
+            <div class="switches">
+                <span class="switch-label">Light 2</span>
+                <label class="switch" for="light1">
+                    <input type="checkbox" name="light1" id="light1">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <br>
+            <div class="switches">
+                <span class="switch-label">Light 3</span>
+                <label class="switch" for="light1">
+                    <input type="checkbox" name="light1" id="light1">
+                    <span class="slider"></span>
+                </label>
+            </div>        </div>  
