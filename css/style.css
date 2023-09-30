@@ -1,35 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
 body {
+    font-family: 'Raleway', sans-serif;
     margin-left: 20px;
     margin-right: 20px;
     background-color: rgb(27, 27, 31);
     color: white;
 }
 
-#kayLogo {
-    padding: 20px;
-    background-color: brown;
-    font-family: 'Raleway', sans-serif;
-}
 
-#switches-div {
-    margin-left: 40px;
-    vertical-align: middle;
-}
-
-.switches {
-    font-family: 'Raleway', sans-serif;
-    display: inline;
-    vertical-align: middle;
-}
-
-.switch-label {
-    font-size: 1.5em;
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
+/* --- Create columns --- */
 .column {
     float: left;
     width: 33.33%;
@@ -53,4 +33,32 @@ body {
   .middle {
     width: 50%;
   } */
+/* --- */
+
+/* --- Column 2 styles */
+#kayLogo {
+    padding: 20px;
+    background-color: brown;
+    font-family: 'Raleway', sans-serif;
+}
+
+#switches-div {
+    vertical-align: middle;
+}
+
+.switches {
+    display: inline;
+    vertical-align: middle;
+}
+
+.switch-label {
+    position: relative;
+    top: 12px;
+    margin-left: 5px;
+    font-size: 1.5em;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
 

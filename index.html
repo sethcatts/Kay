@@ -14,42 +14,47 @@
     <main>
         <div class="row">
             <div class="column">
-                <h3>Column One</h3>
-                <div id="mySidebar" class="sidebar">
-                    <iframe src="https://todoist.com/app/today" title="todoist" id="iframe-todoist">
-                    </iframe>
-                  </div>
+                <h3>Column One - Todoist</h3>
+                <iframe src="https://todoist.com/app/today" title="todoist" id="iframe-todoist"></iframe>
             </div>
             <div class="column">
-                <h3>Column Two</h3>
-                <h1 id="kayLogo">Welcome to Project Kay</h1> 
+                <h3>Column Two - Control Center</h3>
+                <h1 id="kayLogo">Project Kay</h1> 
                 <div id="switches-div">
                     <div class="switches">
+                        <label class="switch" for="light1">
+                            <input type="checkbox" name="light1" id="light1">
+                            <span class="slider"></span>
+                        </label>
                         <span class="switch-label">Light 1</span>
-                        <label class="switch" for="light1">
-                            <input type="checkbox" name="light1" id="light1">
-                            <span class="slider"></span>
-                        </label>
                     </div>
                     <br>
                     <div class="switches">
+                        <label class="switch" for="light2">
+                            <input type="checkbox" name="light2" id="light2">
+                            <span class="slider"></span>
+                        </label>
                         <span class="switch-label">Light 2</span>
-                        <label class="switch" for="light1">
-                            <input type="checkbox" name="light1" id="light1">
-                            <span class="slider"></span>
-                        </label>
                     </div>
                     <br>
                     <div class="switches">
-                        <span class="switch-label">Light 3</span>
-                        <label class="switch" for="light1">
-                            <input type="checkbox" name="light1" id="light1">
+                        <label class="switch" for="light3">
+                            <input type="checkbox" name="light3" id="light3">
                             <span class="slider"></span>
                         </label>
-                    </div>        </div> 
+                        <span class="switch-label">Light 3</span>
+                    </div>        
+                </div> 
+                <div class="switches">
+                    <label class="switch" for="shades1">
+                        <input type="checkbox" name="shades1" id="shades1">
+                        <span class="slider"></span>
+                    </label>
+                    <span class="switch-label">Shades 1</span>
+                </div>  
             </div>
             <div class="column">
-                <h3>Column Three</h3>
+                <h3>Column Three - System Log</h3>
             </div>
           </div> 
     </main>
