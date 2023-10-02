@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Kay</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/switches.css">
-    <link rel="stylesheet" href="./css/sidebar.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/style.css')}}">
     <link rel="icon" href="./images/phg.png" type="image/x-icon">
   </head>
   <body>
@@ -20,6 +18,14 @@
             <div class="column">
                 <h3>Column Two - Control Center</h3>
                 <h1 id="kayLogo">Project Kay</h1> 
+                <div class='container'>
+                    <h3>Test</h3>
+                        <form>
+                            <a href=# id=test><button class='btn btn-default'>Test</button></a>
+                        </form>
+                    
+                    </div>
+                
                 <div id="switches-div">
                     <div class="switches">
                         <label class="switch" for="light1">
@@ -59,5 +65,17 @@
           </div> 
     </main>
 	<script src="index.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type=text/javascript>
+        $(function() {
+          $('a#test').bind('click', function() {
+            $.getJSON('/background_process_test',
+                function(data) {
+              //do nothing
+            });
+        return false;
+      });
+    });
+</script>
   </body>
 </html>
