@@ -1,81 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Kay</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='styles/style.css')}}">
-    <link rel="icon" href="./images/phg.png" type="image/x-icon">
-  </head>
-  <body>
-    <main>
-        <div class="row">
-            <div class="column">
-                <h3>Column One - Todoist</h3>
-                <iframe src="https://todoist.com/app/today" title="todoist" id="iframe-todoist"></iframe>
-            </div>
-            <div class="column">
-                <h3>Column Two - Control Center</h3>
-                <h1 id="kayLogo">Project Kay</h1> 
-                <div class='container'>
-                    <h3>Test</h3>
-                        <form>
-                            <a href=# id=test><button class='btn btn-default'>Test</button></a>
-                        </form>
-                    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Kay</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='styles/style.css')}}">
+        <link rel="icon" href="./images/phg.png" type="image/x-icon">
+    </head>
+    <body>
+        <main>
+            <div class="row">
+                <div class="column">
+                    <h3>Column One - Todoist</h3>
+                    <iframe src="https://todoist.com/app/today" title="todoist" id="iframe-todoist"></iframe>
+                </div>
+                <div class="column">
+                    <h3>Column Two - Control Center</h3>
+                    <h1 id="kayLogo">Project Kay</h1>
+                    <div id="switches-div">
+                        <div class="switches">
+                            <label class="switch" for="light1">
+                                <input type="checkbox" name="light1" id="light1">
+                                <span class="slider"></span>
+                            </label>
+                            <span class="switch-label">Light 1</span>
+                        </div>
+                        <br>
+                        <div class="switches">
+                            <label class="switch" for="light2">
+                                <input type="checkbox" name="light2" id="light2">
+                                <span class="slider"></span>
+                            </label>
+                            <span class="switch-label">Light 2</span>
+                        </div>
+                        <br>
+                        <div class="switches">
+                            <label class="switch" for="light3">
+                                <input type="checkbox" name="light3" id="light3">
+                                <span class="slider"></span>
+                            </label>
+                            <span class="switch-label">Light 3</span>
+                        </div>
                     </div>
-                
-                <div id="switches-div">
                     <div class="switches">
-                        <label class="switch" for="light1">
-                            <input type="checkbox" name="light1" id="light1">
+                        <label class="switch" for="shades1">
+                            <input type="checkbox" name="shades1" id="shades1">
                             <span class="slider"></span>
                         </label>
-                        <span class="switch-label">Light 1</span>
+                        <span class="switch-label">Shades 1</span>
                     </div>
-                    <br>
-                    <div class="switches">
-                        <label class="switch" for="light2">
-                            <input type="checkbox" name="light2" id="light2">
-                            <span class="slider"></span>
-                        </label>
-                        <span class="switch-label">Light 2</span>
-                    </div>
-                    <br>
-                    <div class="switches">
-                        <label class="switch" for="light3">
-                            <input type="checkbox" name="light3" id="light3">
-                            <span class="slider"></span>
-                        </label>
-                        <span class="switch-label">Light 3</span>
-                    </div>        
-                </div> 
-                <div class="switches">
-                    <label class="switch" for="shades1">
-                        <input type="checkbox" name="shades1" id="shades1">
-                        <span class="slider"></span>
-                    </label>
-                    <span class="switch-label">Shades 1</span>
-                </div>  
+                </div>
+                <div class="column">
+                    <h3>Column Three - System Log</h3>
+                </div>
             </div>
-            <div class="column">
-                <h3>Column Three - System Log</h3>
-            </div>
-          </div> 
-    </main>
-	<script src="index.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type=text/javascript>
-        $(function() {
-          $('a#test').bind('click', function() {
-            $.getJSON('/background_process_test',
-                function(data) {
-              //do nothing
-            });
-        return false;
-      });
-    });
-</script>
-  </body>
+        </main>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            document.querySelector('#light1').addEventListener('change', function () {
+                if (this.checked) {
+                    let request = new XMLHttpRequest();
+                    request.open('GET', '/light_one_on', true);
+                    request.onload = function () {
+                        if (this.status >= 200 && this.status < 400) {
+                            let data = JSON.parse(this.response);
+                        }
+                    };
+                    request.send();
+                    return false;
+                } else {
+                    let request = new XMLHttpRequest();
+                    request.open('GET', '/light_one_off', true);
+                    request.onload = function () {
+                        if (this.status >= 200 && this.status < 400) {
+                            let data = JSON.parse(this.response);
+                        }
+                    };
+                    request.send();
+                    return false;
+                }
+            }, false);
+            document.querySelector('#light2').addEventListener('change', function () {
+                if (this.checked) {
+                    let request = new XMLHttpRequest();
+                    request.open('GET', '/light_two_on', true);
+                    request.onload = function () {
+                        if (this.status >= 200 && this.status < 400) {
+                            let data = JSON.parse(this.response);
+                        }
+                    };
+                    request.send();
+                    return false;
+                } else {
+                    let request = new XMLHttpRequest();
+                    request.open('GET', '/light_two_off', true);
+                    request.onload = function () {
+                        if (this.status >= 200 && this.status < 400) {
+                            let data = JSON.parse(this.response);
+                        }
+                    };
+                    request.send();
+                    return false;
+                }
+            }, false);
+        </script>
+    </body>
 </html>
