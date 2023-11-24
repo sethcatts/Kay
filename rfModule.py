@@ -1,14 +1,14 @@
 from rpi_rf import RFDevice
+import schedule
+import time
 
-#lightController.light1.toggle()
-
-#TODO: Add on/off codes
 class lightController:
     def __init__(self):
         self.light1 = light("Light 1", 11097754, 11097746)
         self.light2 = light("Light 2", 11097756, 11097748)
         self.light3 = light("Light 3", 11097753, 11097745)
         print("Log: Created light controller")
+
 
 class light:
     def __init__(self, name, onCode, offCode):
@@ -34,6 +34,16 @@ class light:
 
     def getName(self):
         return self.name
+    
+    def turnOn(self):
+        self.rfController.sendSignal(self.onCode)
+        self.on = True
+        print("Log: Toggled light on")
+    
+    def turnOff(self) :
+        self.rfController.sendSignal(self.offCode)
+        self.on = False
+        print("Log: Toggled light off")
 
 class rfController:
     def __init__(self):

@@ -1,9 +1,12 @@
 from flask import Flask, render_template, url_for
 from rpi_rf import RFDevice
+import schedule
+import time
 import rfModule
 
 app = Flask (__name__)
 con = rfModule.lightController()
+
 
 @app.route("/")
 def index():
@@ -34,4 +37,6 @@ def light_two_off():
     return "nothing"
 
 if __name__ == '__main__':
-    app.run(debug=true)
+    print("Starting server")
+    app.run(debug=True)
+
