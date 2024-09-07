@@ -6,26 +6,30 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Kay</title>
         <link rel="stylesheet" href="{{url_for('static', filename='styles/style.css')}}">
+        <link rel="stylesheet" href="../static/styles/style.css">
         <link rel="icon" href="./images/phg.png" type="image/x-icon">
     </head>
     <body>
         <main>
             <div class="row">
                 <div class="column1">
-                    <h3>Todoist</h3>
                     <iframe src="https://todoist.com/app/today" title="todoist" id="iframe-todoist"></iframe>
                 </div>
                 <div class="column2">
-                    <h3>Control Center</h3>
-                    <h1 id="kayLogo">Kay</h1>
+                    <div class="stinger-div">
+                        <img class="icon" src="../images/phg.png">
+                    </div>
+                    <h1 id="kayLogo">Control Board</h1>
                     <div id="switches-div">
                         <button class="lightToggleStyles" id="light1">Lamp 1</button>
-                        <br>
                         <button class="lightToggleStyles" id="light2">Lamp 2</button>
-                        <br>
                         <button class="lightToggleStyles" id="light3">Sunlamp</button>
-                        <br>
                         <button class="lightToggleStyles" id="light4">Plant Light</button>
+                        <button class="lightToggleStyles" id="light5">Open Shades</button>
+                        <button class="lightToggleStyles" id="light6">Close Shades</button>
+                    </div>
+                    <div class="stinger-div">
+                        <img class="stinger" src="../images/jinx-stinger.png">
                     </div>
                 </div>
             </div>
