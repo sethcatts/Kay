@@ -11,98 +11,70 @@
     <body>
         <main>
             <div class="row">
-                <div class="column">
-                    <h3>Column One - Todoist</h3>
+                <div class="column1">
+                    <h3>Todoist</h3>
                     <iframe src="https://todoist.com/app/today" title="todoist" id="iframe-todoist"></iframe>
                 </div>
-                <div class="column">
-                    <h3>Column Two - Control Center</h3>
-                    <h1 id="kayLogo">Project Kay</h1>
+                <div class="column2">
+                    <h3>Control Center</h3>
+                    <h1 id="kayLogo">Kay</h1>
                     <div id="switches-div">
-                        <div class="switches">
-                            <label class="switch" for="light1">
-                                <input type="checkbox" name="light1" id="light1">
-                                <span class="slider"></span>
-                            </label>
-                            <span class="switch-label">Light 1</span>
-                        </div>
+                        <button class="lightToggleStyles" id="light1">Lamp 1</button>
                         <br>
-                        <div class="switches">
-                            <label class="switch" for="light2">
-                                <input type="checkbox" name="light2" id="light2">
-                                <span class="slider"></span>
-                            </label>
-                            <span class="switch-label">Light 2</span>
-                        </div>
+                        <button class="lightToggleStyles" id="light2">Lamp 2</button>
                         <br>
-                        <div class="switches">
-                            <label class="switch" for="light3">
-                                <input type="checkbox" name="light3" id="light3">
-                                <span class="slider"></span>
-                            </label>
-                            <span class="switch-label">Light 3</span>
-                        </div>
+                        <button class="lightToggleStyles" id="light3">Sunlamp</button>
+                        <br>
+                        <button class="lightToggleStyles" id="light4">Plant Light</button>
                     </div>
-                    <div class="switches">
-                        <label class="switch" for="shades1">
-                            <input type="checkbox" name="shades1" id="shades1">
-                            <span class="slider"></span>
-                        </label>
-                        <span class="switch-label">Shades 1</span>
-                    </div>
-                </div>
-                <div class="column">
-                    <h3>Column Three - System Log</h3>
                 </div>
             </div>
         </main>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script type="text/javascript">
-            document.querySelector('#light1').addEventListener('change', function () {
-                if (this.checked) {
+            document.querySelector('#light1').addEventListener('click', function () {
                     let request = new XMLHttpRequest();
-                    request.open('GET', '/light_one_on', true);
+                    request.open('GET', '/light_one_toggle', true);
                     request.onload = function () {
                         if (this.status >= 200 && this.status < 400) {
                             let data = JSON.parse(this.response);
                         }
                     };
                     request.send();
-                    return false;
-                } else {
-                    let request = new XMLHttpRequest();
-                    request.open('GET', '/light_one_off', true);
-                    request.onload = function () {
-                        if (this.status >= 200 && this.status < 400) {
-                            let data = JSON.parse(this.response);
-                        }
-                    };
-                    request.send();
-                    return false;
-                }
+                    return false;   
             }, false);
-            document.querySelector('#light2').addEventListener('change', function () {
-                if (this.checked) {
-                    let request = new XMLHttpRequest();
-                    request.open('GET', '/light_two_on', true);
+            document.querySelector('#light2').addEventListener('click', function () {
+                let request = new XMLHttpRequest();
+                    request.open('GET', '/light_two_toggle', true);
                     request.onload = function () {
                         if (this.status >= 200 && this.status < 400) {
                             let data = JSON.parse(this.response);
                         }
                     };
                     request.send();
-                    return false;
-                } else {
-                    let request = new XMLHttpRequest();
-                    request.open('GET', '/light_two_off', true);
+                    return false; 
+            }, false);
+            document.querySelector('#light3').addEventListener('click', function () {
+                let request = new XMLHttpRequest();
+                    request.open('GET', '/light_three_toggle', true);
                     request.onload = function () {
                         if (this.status >= 200 && this.status < 400) {
                             let data = JSON.parse(this.response);
                         }
                     };
                     request.send();
-                    return false;
-                }
+                    return false; 
+            }, false);
+            document.querySelector('#light4').addEventListener('click', function () {
+                let request = new XMLHttpRequest();
+                    request.open('GET', '/plant_light_toggle', true);
+                    request.onload = function () {
+                        if (this.status >= 200 && this.status < 400) {
+                            let data = JSON.parse(this.response);
+                        }
+                    };
+                    request.send();
+                    return false; 
             }, false);
         </script>
     </body>

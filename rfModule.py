@@ -7,6 +7,7 @@ class lightController:
         self.light1 = light("Light 1", 11097754, 11097746)
         self.light2 = light("Light 2", 11097756, 11097748)
         self.light3 = light("Light 3", 11097753, 11097745)
+        self.light4 = light("Plant Light", 5592321, 5592323)
         print("Log: Created light controller")
 
 
@@ -53,7 +54,7 @@ class rfController:
         rfdevice = RFDevice(17)
         rfdevice.enable_tx()
         rfdevice.tx_repeat = 10
-        rfdevice.tx_code(code, 1, 200, None)
+        rfdevice.tx_code(code, 1, 350, None)
         rfdevice.cleanup()
         s_string = "Sent signal: " + str(code)
         print(s_string)

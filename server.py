@@ -13,28 +13,29 @@ def index():
     return render_template('index.html')
 
 # background process happening without any refreshing
-@app.route('/light_one_on')
-def light_one_on():
+@app.route('/light_one_toggle')
+def light_one_toggle():
     con.light1.toggle()
     return "nothing"
 
 # background process happening without any refreshing
-@app.route('/light_one_off')
-def light_one_off():
-    con.light1.toggle()
-    return "nothing"
-
-# background process happening without any refreshing
-@app.route('/light_two_on')
-def light_two_on():
+@app.route('/light_two_toggle')
+def light_two_toggle():
     con.light2.toggle()
     return "nothing"
 
 # background process happening without any refreshing
-@app.route('/light_two_off')
-def light_two_off():
-    con.light2.toggle()
+@app.route('/light_three_toggle')
+def light_three_toggle():
+    con.light3.toggle()
     return "nothing"
+
+# background process happening without any refreshing
+@app.route('/plant_light_toggle')
+def  plant_light_toggle():
+    con.light4.toggle()
+    return "nothing"
+
 
 if __name__ == '__main__':
     print("Starting server")

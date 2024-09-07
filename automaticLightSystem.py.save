@@ -30,30 +30,31 @@ def plantLightOff():
     con.light4.turnOff()
 
 # Turn bedside lamp on at 6:30pm
-schedule.every().day.at("08:00:45").do(light1On)
+schedule.every().day.at("17:00").do(light1On)
 # Turn bedside lamp off at 12:00pm
-schedule.every().day.at("10:00:45").do(light1Off)
+schedule.every().day.at("00:00").do(light1Off)
+
+# Turn desk lamp on at at 06:30pm
+schedule.every().day.at("17:00:01").do(light2On)
+# Turn desk lamp off at 09:00pm
+schedule.every().day.at("21:00").do(light2Off)
 # Turn bedside lamp on at 6:30pm
 schedule.every().day.at("17:00").do(light1On)
 # Turn bedside lamp off at 12:00pm
 schedule.every().day.at("00:00").do(light1Off)
 
 # Turn desk lamp on at at 06:30pm
-schedule.every().day.at("08:00:30").do(light2On)
-# Turn desk lamp off at 09:00pm
-schedule.every().day.at("10:00:30").do(light2Off)
-# Turn desk lamp on at at 06:30pm
 schedule.every().day.at("17:00:01").do(light2On)
 # Turn desk lamp off at 09:00pm
 schedule.every().day.at("21:00").do(light2Off)
-
 # Turn on sunlamp at 8:30am
 schedule.every().day.at("08:00").do(light3On)
 # Turn off sunlamp at 9:30am
 schedule.every().day.at("10:00").do(light3Off)
 
 # # Turn desk lamp on at at 11:00am
-# schedule.every().day.at("11:00:01").do(plantLightOn)
+# schedule.every().day.at("11:00:01").do(plant
+LightOn)
 # # Turn desk lamp off at 10:00pm
 # schedule.every().day.at("22:00").do(plantLightOff)
 

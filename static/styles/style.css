@@ -1,28 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
 body {
-    font-family: 'Raleway', sans-serif;
-    margin-left: 20px;
-    margin-right: 20px;
-    background-color: rgb(27, 27, 31);
-    color: white;
+  font-family: 'Raleway', sans-serif;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: rgb(27, 27, 31);
+  color: white;
 }
 
 
 /* --- Create columns --- */
-.column {
-    float: left;
-    width: 33.33%;
-  }
-  
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+.column1 {
+  float: left;
+  width: 60%;
+}
+.column2 {
+  float: left;
+  width: 40%;
+}
 
-  /* .column {
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* .column {
     float: left;
   }
   
@@ -37,38 +41,38 @@ body {
 
 /* --- Column 2 styles */
 #kayLogo {
-    padding: 20px;
-    background-color: brown;
-    font-family: 'Raleway', sans-serif;
+  padding: 20px;
+  background-color: brown;
+  font-family: 'Raleway', sans-serif;
 }
 
 #switches-div {
-    vertical-align: middle;
+  vertical-align: middle;
 }
 
 .switches {
-    display: inline;
-    vertical-align: middle;
+  display: inline;
+  vertical-align: middle;
 }
 
 .switch-label {
-    position: relative;
-    top: 12px;
-    margin-left: 5px;
-    font-size: 1.5em;
-    margin-top: auto;
-    margin-bottom: auto;
+  position: relative;
+  top: 12px;
+  margin-left: 5px;
+  font-size: 1.5em;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 #iframe-todoist {
   width: 95%;
-  height: 870px;
+  height: 820px;
 }
 
 
 
- /* The switch - the box around the slider */
- .switch {
+/* The switch - the box around the slider */
+.switch {
   position: relative;
   display: inline-block;
   width: 60px;
@@ -107,15 +111,15 @@ body {
   transition: .4s;
 }
 
-input:checked + .slider {
+input:checked+.slider {
   background-color: #2196F3;
 }
 
-input:focus + .slider {
+input:focus+.slider {
   box-shadow: 0 0 1px #2196F3;
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
@@ -128,4 +132,31 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
-} 
+}
+
+
+.lightToggleStyles {
+	box-shadow: 3px 4px 0px 0px #899599;
+	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+	background-color:#ededed;
+	border-radius:15px;
+	border:1px solid #d6bcd6;
+	display:inline-block;
+	cursor:pointer;
+	color:#3a8a9e;
+	font-family:Trebuchet MS;
+	font-size:17px;
+	font-weight:bold;
+	padding:12px 63px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #e1e2ed;
+  margin-bottom: 10px;
+}
+.lightToggleStyles:hover {
+	background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+	background-color:#bab1ba;
+}
+.lightToggleStyles:active {
+	position:relative;
+	top:1px;
+}
